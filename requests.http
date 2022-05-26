@@ -1,0 +1,74 @@
+### User
+
+### Create a new user and sign in
+POST http://localhost:3000/auth/signup
+Content-Type: application/json
+
+{
+    "email": "1536497398@qq.com",
+    "password": "123456"
+}
+
+### Get who am I
+GET http://localhost:3000/auth/whoami
+
+### Sign in as an existing user
+POST http://localhost:3000/auth/signin
+Content-Type: application/json
+
+{
+    "email": "1536497398@qq.com",
+    "password": "123456"
+}
+
+### Get who am I
+Post http://localhost:3000/auth/signout
+
+### Get id to find user
+GET http://localhost:3000/auth/1
+
+### Get email query to find user
+GET http://localhost:3000/auth?email=1536497398@qq.com
+
+### Delete a user
+DELETE http://localhost:3000/auth/2
+
+### update a user
+PATCH http://localhost:3000/auth/1
+Content-Type: application/json
+
+{
+    "email":"110@qq.com",
+    "password":"123"
+}
+
+
+
+### Reports
+
+### Create a report
+Post http://localhost:3000/reports
+Content-Type: application/json
+
+{
+    "price": 100,
+    "make": "123456",
+    "model": "eawe",
+    "year" : 2002,
+    "mileage" : 2000,
+    "lng" : 111,
+    "lat": 24
+}
+
+
+### Get an estimate for cars value
+GET http://localhost:3000/reports?make=123456&model=eawe&year=2002&mileage=2000&lng=111&lat=24
+
+
+### Report how much a vehicle sold for
+Patch http://localhost:3000/reports/1
+Content-Type: application/json
+
+{
+    "approved": true
+}
